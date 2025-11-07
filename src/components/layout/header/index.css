@@ -1,0 +1,34 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #313131;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  height: 10vh;
+  position: fixed;
+  top: 3vh;
+  width: 90%;
+
+}
+
+.logo img {
+  height: 15vh;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #f7f7f7;
+  font-weight: 500;
+}
+
+.cart-icon {
+  cursor: pointer;
+  color: rgb(60, 127, 221);
+}
