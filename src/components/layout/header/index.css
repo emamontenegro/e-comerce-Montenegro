@@ -14,7 +14,20 @@
 
 .logo img {
   height: 15vh;
+  filter:
+    drop-shadow(0 0 6px rgba(0,200,255,0.8))
+    drop-shadow(0 0 12px rgba(0,200,255,0.5))
+    drop-shadow(0 0 18px rgba(0,200,255,0.3))
+    brightness(1.05) contrast(1.1);
 }
+
+img:hover {
+  filter:
+    drop-shadow(0 0 12px rgba(0,200,255,1))
+    drop-shadow(0 0 24px rgba(0,200,255,0.8))
+    brightness(1.2);
+}
+
 
 .nav ul {
   display: flex;
@@ -23,12 +36,21 @@
 }
 
 .nav a {
-  text-decoration: none;
-  color: #f7f7f7;
-  font-weight: 500;
+    color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff;
+  font-weight: bold;
+  font-size: 1rem;
 }
 
-.cart-icon {
-  cursor: pointer;
-  color: rgb(60, 127, 221);
+a:hover {
+  color: #fff;
+  text-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 30px #0ff,
+    0 0 40px #0ff,
+    0 0 50px #0ff;
 }
