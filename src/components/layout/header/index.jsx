@@ -1,11 +1,12 @@
 import Cart from '../cart/index.jsx'
+import logo from '../../../assets/logotec.png'
 import './index.css'
 
 const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <img src="./public/logotec.png" alt="Tec logo" />
+        <img src={logo} alt="Tec logo" />
       </div>
       <nav className="nav">
         <ul>
