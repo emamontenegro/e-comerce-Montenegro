@@ -1,7 +1,7 @@
 import { FaShoppingCart } from 'react-icons/fa'
 import './index.css'
 
-const Cart = () => {
+const Cartitem = () => {
   const itemCount = 17
 
   return (
@@ -12,4 +12,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Cartitem

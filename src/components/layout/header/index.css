@@ -4,15 +4,17 @@
   align-items: center;
   padding: 1rem 2rem;
   background-color: #313131;
+  border: 1px solid #444;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   height: 10vh;
   position: fixed;
   top: 3vh;
   width: 90%;
+  z-index: 9999;
 
 }
 
-.logo img {
+.logo .logoimg {
   height: 15vh;
   filter:
     drop-shadow(0 0 6px rgba(0,200,255,0.8))
@@ -21,7 +23,7 @@
     brightness(1.05) contrast(1.1);
 }
 
-img:hover {
+.logoimg:hover {
   filter:
     drop-shadow(0 0 12px rgba(0,200,255,1))
     drop-shadow(0 0 24px rgba(0,200,255,0.8))

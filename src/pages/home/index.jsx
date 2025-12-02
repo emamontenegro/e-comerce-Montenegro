@@ -1,5 +1,7 @@
 import Card from "../../components/common/card";
+import AboutUs from "../../components/common/homeAbouts";
 import useProducts from "../../hooks/useProducts";
+import './index.css';
 
 const Home = () => {
   const { items: products, loading } = useProducts();
@@ -7,10 +9,15 @@ const Home = () => {
   if (loading) return <p>Cargando productos...</p>;
 
   return (
-    <div className="product-grid">
-      {products.map(product => (
-        <Card key={product.id} product={product} />
-      ))}
+    <div>
+
+      <AboutUs />
+
+      <div className="product-grid">
+        {products.map(product => (
+          <Card key={product.id} product={product} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import Card from "../../components/common/card";
 import CategoryList from "../../components/common/categorieslist";
 import useProducts from "../../hooks/useProducts";
 import { useState } from "react";
+import './index.css'
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -11,25 +12,25 @@ const Shop = () => {
 
   if (loading) return <p>Cargando productos...</p>;
 
-  const filteredProducts = selectedCategory
-    ? products.filter((p) => p.category === selectedCategory)
-    : products;
-
   return (
-    <main className="shop-page">
-      <h1>Shop</h1>
+    <>
+      <h2 className="shop">Shop</h2>
+      <div className="shop-layout">
 
-      <CategoryList
-        selectedCategory={selectedCategory}
-        onSelectCategory={handleSelectCategory}
-      />
+        <aside className="sidebar">
+          <h3>Categorías</h3>
+          <CategoryList 
+          selectedCategory={selectedCategory}
+          onSelectCategory={handleSelectCategory} />            
+        </aside>
 
-      <div className="product-grid">
-        {filteredProducts.map((product) => (
-          <Card key={product.id} product={product} />
-        ))}
+        <main className="product-grid">
+          {products.map((product) => (
+            <Card key={product.id} product={product} />
+          ))}
+        </main>
       </div>
-    </main>
+    </>
   );
 };
 
