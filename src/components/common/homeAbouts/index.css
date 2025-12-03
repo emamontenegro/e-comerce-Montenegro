@@ -33,11 +33,14 @@
 .about-us-content ul {
   margin: 1rem 0;
   padding-left: 1.2rem;
+  list-style-type: none;
 }
 
 .about-us-content li {
+  font-size: 1.1rem;
+  font-weight: 600;
   margin-bottom: 0.7rem;
-  color: #d6d6d6;
+  color: #e3e3e3;
 }
 
 .about-us-ending {
