@@ -23,8 +23,8 @@
   font-size: 1rem;
 }
 
-.card .add-cart-btn {
-  background: #00c853;
+.card .card-btn-counter {
+  background: #8c0173;
   color: #111;
   font-weight: bold;
   padding: 14px 22px;
@@ -35,8 +35,8 @@
   transition: 0.2s ease;
 }
 
-.card .add-cart-btn:hover {
-  background: #00e676;
+.card .card-btn-counter:hover {
+  background: #d603ba;
   transform: scale(1.03);
 }
 

@@ -1,11 +1,14 @@
 import { useParams, useNavigate } from "react-router";
 import useProducts from "../../hooks/useProducts";
+import useProductCounter from "../../hooks/useProductCounter";
 import "./index.css";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { items, loading } = useProducts();
+
+  const { count, add, remove } = useProductCounter(0);
 
   if (loading) return <p className="loading">Cargando...</p>;
 
@@ -26,8 +29,9 @@ const ProductDetail = () => {
           <h1>{product.title}</h1>
           <p>{product.info}</p>
           <h2>${product.price}</h2>
-          <button className="add-cart-btn"> Agregar al carrito </button>
-
+          <button onClick={add} className="detail-btn-agregar">Agregar</button>
+          <button onClick={remove} className="detail-btn-quitar">Quitar</button>
+          <p>Cantidad agregada: {count}</p>
           {product.details && (
             <div className="detail-extra">
               <h3>Detalles</h3>
