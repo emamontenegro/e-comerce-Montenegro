@@ -1,4 +1,5 @@
-import listcategory from "../categoryarray.js";
+
+import listcategory from '../../../services/categoryarray.js';
 import './index.css'
 
 const CategoryList = ({ selectedCategory, selectedSubcategory, onSelectCategory, onSelectSubcategory }) => {

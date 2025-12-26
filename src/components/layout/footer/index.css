@@ -1,0 +1,68 @@
+.footer {
+    background-color: #1a1a1a;
+    color: #e4e4e4;
+    padding: 3rem 1rem 1.5rem;
+    border-top: 1px solid #444;
+    margin-top: 4rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-brand .footer-logo {
+    color: #00f2ff;
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.5);
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.footer-brand p {
+    color: #bbb;
+    font-size: 0.95rem;
+}
+
+.footer-socials h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.footer-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0) invert(1); 
+}
+
+.icon-link:hover .footer-icon {
+    transform: translateY(-4px);
+    /* Brillo neón al hacer hover */
+    filter: drop-shadow(0 0 6px #00f2ff) brightness(1.2);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid #333;
+    text-align: center;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.footer-bottom strong {
+    color: #8c0173;
+}

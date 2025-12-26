@@ -1,20 +1,37 @@
 import { useParams, useNavigate } from "react-router";
 import useProducts from "../../hooks/useProducts";
-import useProductCounter from "../../hooks/useProductCounter";
+import { useAuth } from "../../context/auth";
 import "./index.css";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
   const { items, loading } = useProducts();
 
-  const { count, add, remove } = useProductCounter(0);
+  const { cart, addToCart, removeFromCart } = useAuth();
 
-  if (loading) return <p className="loading">Cargando...</p>;
 
   const product = items.find((p) => String(p.id) === String(id));
 
+
+  if (loading) return <p className="loading">Cargando...</p>;
+
   if (!product) return <p className="not-found">Producto no encontrado</p>;
+
+
+  const itemInCart = cart.find((p) => p.id === product.id);
+  const quantity = itemInCart?.quantity || 0;
+
+
+  const handleAddToCart = () => {
+    addToCart(product);
+  };
+
+
+  const handleRemoveFromCart = () => {
+    removeFromCart(product.id);
+  };
 
   return (
     <div className="detail-container">
@@ -29,9 +46,25 @@ const ProductDetail = () => {
           <h1>{product.title}</h1>
           <p>{product.info}</p>
           <h2>${product.price}</h2>
-          <button onClick={add} className="detail-btn-agregar">Agregar</button>
-          <button onClick={remove} className="detail-btn-quitar">Quitar</button>
-          <p>Cantidad agregada: {count}</p>
+
+          <button
+            onClick={handleAddToCart}
+            className="detail-btn-agregar"
+            disabled={quantity > 0}
+          >
+            {quantity > 0 ? "Ya agregado" : "Agregar al carrito"}
+          </button>
+
+          <button
+            onClick={handleRemoveFromCart}
+            className="detail-btn-quitar"
+            disabled={quantity === 0}
+          >
+            Quitar del carrito
+          </button>
+
+          <p>Cantidad agregada: {quantity}</p>
+
           {product.details && (
             <div className="detail-extra">
               <h3>Detalles</h3>

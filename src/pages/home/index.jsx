@@ -1,23 +1,29 @@
-import Card from "../../components/common/card";
 import AboutUs from "../../components/common/homeAbouts";
+import OfferCarousel from "../../components/common/offerCarousel";
 import useProducts from "../../hooks/useProducts";
-import './index.css';
+import "./index.css";
 
 const Home = () => {
   const { items: products, loading } = useProducts();
 
   if (loading) return <p>Cargando productos...</p>;
 
+  const ofertas = products.filter(p => p.offer).slice(0, 5);
+
   return (
     <div>
-
       <AboutUs />
 
-      <div className="product-grid">
-        {products.map(product => (
-          <Card key={product.id} product={product} />
-        ))}
-      </div>
+      {ofertas.length > 0 && (
+        <>
+          <h2 className="home-section-title">
+            Productos en oferta
+          </h2>
+
+          <OfferCarousel products={ofertas} />
+        </>
+      )}
+
     </div>
   );
 };

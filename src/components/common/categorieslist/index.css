@@ -2,9 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 2rem;
-  margin-top: 18vh;
+  padding: 0;
+  margin-top: 0.5rem;
   justify-content: center;
+
 }
 
 .category-item {

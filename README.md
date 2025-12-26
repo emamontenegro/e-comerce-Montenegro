@@ -1,16 +1,39 @@
-# React + Vite
+# NeonByte - PC Hardware Store 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**NeonByte** es un e-commerce de alto rendimiento desarrollado con **React + Vite** para la comercialización de componentes de hardware. El proyecto utiliza **Firebase Firestore** como base de datos dinámica y un sistema de gestión de estado global para el carrito de compras.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Catálogo de Productos:** Navegación dinámica de componentes (GPUs, CPUs, RAMs, etc.) consumidos desde Firestore.
+- **Filtrado Avanzado:** Segmentación por categorías y marcas (NVIDIA, AMD, Intel).
+- **Gestión de Carrito:**
+    - Implementación de **Context API** (`AuthContext`) para persistencia y estado global.
+    - Cálculo automático de totales y cantidades.
+    - Proceso de finalización de compra con reporte detallado.
+- **Panel Administrativo:** Interfaz para la carga y gestión de stock en la base de datos.
+- **Diseño Custom:** Estilado 100% con **CSS Puro**, priorizando la identidad visual de la marca y la velocidad de carga.
 
-## React Compiler
+## Tecnologías
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Bundler:** [Vite](https://vitejs.dev/) (Rendimiento optimizado con HMR).
+- **Frontend:** React JS.
+- **BaaS:** Firebase (Cloud Firestore).
+- **Rutas:** React Router DOM.
+- **Estado:** Context API.
 
-## Expanding the ESLint configuration
+## Estructura del Proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Organización basada en las mejores prácticas de modularización:
+
+- `src/components`: Componentes de UI (`common`) y estructura general (`layout`).
+- `src/pages`: Vistas de la aplicación (`Home`, `Shop`, `Cart`, `Admin`, etc.).
+- `src/hooks`: Lógica reutilizable (`useProducts`, `useProductCounter`).
+- `src/services`: Capa de datos y conexión con Firebase.
+- `src/context`: Proveedores de estado global.
+- `src/utils`: Configuraciones técnicas y constantes.
+
+## Instalación y Uso
+
+1. Clona este repositorio:
+   ```bash
+   git clone [https://github.com/emamontenegro/e-comerce-Montenegro.git](https://github.com/emamontenegro/e-comerce-Montenegro.git)

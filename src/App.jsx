@@ -7,6 +7,7 @@ import ProductDetail from "./pages/detailsproducts";
 import Contact from "./pages/contact";
 import Cart from "./pages/cart";
 import './App.css';
+import AddProducts from "./pages/addproducts";
 
 
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/contact" element={ <Contact/> } />
         <Route path="/cart" element={ <Cart/> } />
         <Route path="/shop/:id" element={<ProductDetail/>} />
+        <Route path="/addproducts" element={ <AddProducts/> } />
       </Routes>
 
       <Footer />
