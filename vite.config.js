@@ -1,8 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-  base: mode === "production" ? "/e-comerce-Montenegro/" : "/",
+  base: command === "build" && process.env.VERCEL
+    ? "/"
+    : "/e-comerce-Montenegro/",
 }));
-
