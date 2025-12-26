@@ -11,22 +11,37 @@ const Card = ({ product }) => {
   const sinStock = product.stock === 0;
   const stockMaximoAlcanzado = quantity >= product.stock;
 
+  const discount = 0.15;
+  const discountedPrice = Math.round(product.price * (1 - discount));
+
   return (
     <div className={`card ${sinStock ? "card-disabled" : ""}`}>
-        <div className="card-image">
-          <img src={product.image} alt={product.title} />
-        </div>
+
+      {product.offer && <span className="badge">15% OFF</span>}
+
+      <div className="card-image">
+        <img src={product.image} alt={product.title} />
+      </div>
 
       <h3>{product.title}</h3>
 
-      <p>Precio: ${product.price}</p>
+      <div className="price-container-wrapper">
+        {product.offer ? (
+          <div className="price-container">
+            <span className="old-price">${product.price}</span>
+            <span className="price-discount">${discountedPrice}</span>
+          </div>
+        ) : (
+          <p className="price">Precio: ${product.price}</p>
+        )}
+      </div>
 
       {sinStock && (
         <p className="no-stock">Sin stock disponible</p>
       )}
 
       <button
-        onClick={() => addToCart(product)}
+        onClick={() => addToCart(product.offer ? { ...product, price: discountedPrice } : product)}
         className="card-btn-counter"
         disabled={sinStock || stockMaximoAlcanzado}
       >

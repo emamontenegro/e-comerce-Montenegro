@@ -12,8 +12,8 @@
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   justify-content: flex-start;
+  position: relative; /* Importante para el badge */
 }
-
 
 .card:hover {
   transform: translateY(-4px);
@@ -33,6 +33,41 @@
   margin: 4px 0;
 }
 
+/* --- Estilos de Precio --- */
+
+.price-container-wrapper {
+  height: 32px; /* Mantiene el espacio constante entre productos con y sin oferta */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.old-price {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 0.95rem;
+}
+
+.price-discount {
+  color: #28a745; /* Verde para ofertas */
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card .price {
+  margin: 0;
+  font-size: 1rem;
+  color: #e4e4e4;
+}
+
+/* --- Botones y Otros --- */
 
 .card .card-btn-counter {
   background: #8c0173;
@@ -100,8 +135,15 @@
   color: #bbb;
 }
 
-.no-stock,
-.added-quantity {
-  min-height: 18px;
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #d603ba;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 4px;
+  z-index: 2;
 }
-
