@@ -6,7 +6,10 @@ import App from './App.jsx'
 import { AuthProvider } from "./context/auth/index.jsx";
 
 createRoot(document.getElementById('root')).render(
-  <BrowserRouter basename="/e-comerce-Montenegro">
+  <BrowserRouter  
+  basename={import.meta.env.PROD && !import.meta.env.VERCEL
+    ? "/e-comerce-Montenegro"
+    : "/"}>
     <AuthProvider>
       <App />
     </AuthProvider>
