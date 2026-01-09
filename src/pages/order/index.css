@@ -1,0 +1,86 @@
+.order {
+  min-height: 80vh;
+  padding: 30px;
+  background-color: #1f1f1f;
+  color: #fff;
+  width: 85%;
+  margin: 20vh 5vw;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+.order-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #6effa1;
+}
+
+.order p {
+  margin: 8px 0;
+  color: #ddd;
+}
+
+.order-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.order-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #333;
+  color: #bbb;
+}
+
+.order-btn {
+  display: block;
+  margin: 0 auto;
+  background: #8c0173;
+  border: 1px solid #8c0173;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.order-btn:hover {
+  background: #d603ba;
+}
+
+@media (max-width: 425px) {
+  .order {
+    margin: 15vh 3vw;
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .order-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .order p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .order-list {
+    margin-top: 12px;
+    margin-bottom: 20px;
+  }
+
+  .order-list li {
+    font-size: 0.85rem;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .order-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+}

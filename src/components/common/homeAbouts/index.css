@@ -1,5 +1,4 @@
 .about-us-container {
-  margin-top: 18vh;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -47,4 +46,39 @@
   margin-top: 1.5rem;
   font-size: 1.2rem;
   color: #ffffff;
+}
+
+@media (max-width: 425px) {
+
+  .about-us-container {
+    margin-top: 12vh;
+  }
+
+  .about-us-content {
+    width: 100%;
+    padding: 1.4rem 1.2rem;
+  }
+
+  .about-us-title {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .about-us-content p {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .about-us-content ul {
+    padding-left: 1rem;
+  }
+
+  .about-us-content li {
+    font-size: 1rem;
+  }
+
+  .about-us-ending {
+    font-size: 1.05rem;
+    text-align: center;
+  }
 }

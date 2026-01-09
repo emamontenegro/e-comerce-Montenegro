@@ -1,0 +1,67 @@
+.pre-order-container {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  border: 1px solid #333;
+}
+
+.pre-order-title {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-bottom: 15px;
+  text-align: left;
+  border-left: 3px solid #8c0173;
+  padding-left: 10px;
+}
+
+.pre-order-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+.pre-order-info {
+  display: flex;
+  gap: 12px;
+  color: #bbb;
+}
+
+.pre-order-qty {
+  font-weight: bold;
+  color: #8c0173;
+}
+
+.pre-order-price {
+  color: #fff;
+}
+
+.pre-order-divider {
+  height: 1px;
+  background: #444;
+  margin: 15px 0;
+}
+
+.pre-order-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.total-highlight {
+  color: #00ffae;
+}
+
+@media (max-width: 425px) {
+  .pre-order-container { padding: 15px; }
+  .pre-order-name {
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -10,6 +10,7 @@
   padding: 40px;
   background-color: #1f1f1f;
   color: #fff;
+  margin: 20vh 5vw;
 }
 
 .shop-title {
@@ -40,3 +41,38 @@
   row-gap: 1rem;
   padding-right: 10px;
 }
+
+@media (max-width: 425px) {
+
+  .div-shop {
+    padding: 40px 30px;
+    margin: 15vh 3vw;
+  }
+
+  .shop-title {
+    padding: 14px;
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .shop-layout {
+    padding: 0;
+    gap: 15px;
+  }
+
+  .sidebar {
+    padding: 15px;
+  }
+
+  .sidebar h3 {
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  .products-card {
+    grid-template-columns: 1fr;
+    padding-right: 0;
+    row-gap: 1.2rem;
+  }
+}
+

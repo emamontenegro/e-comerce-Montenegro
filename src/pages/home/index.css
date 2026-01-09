@@ -1,7 +1,28 @@
-.product-grid {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
+.div-home {
+  background-color: #1f1f1f;
+  padding: 5vw 5vh;
+  margin: 20vh 5vw;
+}
+
+.home-section-title {
+  background-color: #313131;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  align-items: center;
+  width: 90%;
+  margin: 5vw auto 2rem auto;
+}
+
+@media (max-width: 768px) {
+  
+  .div-home {
+    margin: 15vh 3vw;
+
+  }
+
+  .home-section-title {
+    padding: 14px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
 }

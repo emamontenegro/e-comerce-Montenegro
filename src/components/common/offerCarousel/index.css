@@ -35,11 +35,17 @@
 
 .carousel-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .carousel-info h3 {
-  font-size: 1.8rem;
+font-size: 1.8rem;
   margin-bottom: 10px;
+  min-height: 4.4rem; 
+  display: flex;
+  align-items: center;
 }
 
 .carousel-info .price {
@@ -96,6 +102,7 @@
   outline: none;
   background: transparent;
   box-shadow: none;
+  backdrop-filter: none;
 }
 
 .carousel-btn.left {
@@ -155,4 +162,71 @@
   background: #f804d8;
   box-shadow: 0 0 20px rgba(214, 3, 186, 0.6);
   transform: translateY(-2px);
+}
+
+@media (max-width: 425px) {
+
+  .offer-carousel {
+    height: 520px;
+    margin: 30px 0;
+    padding: 20px 0;
+    border-radius: 14px;
+    position: relative;
+  }
+
+  .carousel-card {
+    width: 82%; 
+    height: 460px;
+    flex-direction: column;
+    padding: 18px;
+    gap: 18px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .carousel-card img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .carousel-info h3 {
+    font-size: 1.2rem;
+    padding: 0 10px;
+    min-height: 3rem;
+  }
+
+  .carousel-btn {
+    backdrop-filter: none;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    z-index: 5; 
+  }
+
+  .carousel-btn.left {
+    left: 5px;
+  }
+
+  .carousel-btn.right {
+    right: 5px;
+  }
+
+  .price-container { 
+    justify-content: center; 
+  }
+
+  .carousel-actions { 
+    flex-direction: column; gap: 10px; 
+  }
+
+  .btn-detail-link, .btn-add-cart {
+    padding: 12px 0;
+    font-size: 0.9rem;
+  }
 }

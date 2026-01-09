@@ -11,7 +11,7 @@ const Home = () => {
   const ofertas = products.filter(p => p.offer).slice(0, 5);
 
   return (
-    <div>
+    <div className="div-home">
       <AboutUs />
 
       {ofertas.length > 0 && (

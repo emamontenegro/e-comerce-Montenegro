@@ -1,42 +1,36 @@
+import { Link, useParams } from "react-router";
+import listcategory from "../../../services/categoryarray.js";
+import "./index.css";
 
-import listcategory from '../../../services/categoryarray.js';
-import './index.css'
+const CategoryList = () => {
+  const { categoryId, subcategoryId } = useParams();
 
-const CategoryList = ({ selectedCategory, selectedSubcategory, onSelectCategory, onSelectSubcategory }) => {
   return (
     <div className="category-list">
       {listcategory.map((category) => (
         <div key={category.slug} className="category-item">
 
-          <button
-            className={selectedCategory === category.slug ? "active" : ""}
-            onClick={() => {
-              if (selectedCategory === category.slug) {
-                onSelectCategory(null);
-                onSelectSubcategory(null);
-              } else {
-                onSelectCategory(category.slug);
-                onSelectSubcategory(null);
-              }
-            }}
+          <Link
+            className={categoryId === category.slug ? "active" : ""}
+            to={`/category/${category.slug}`}
           >
             {category.name}
-          </button>
+          </Link>
 
-          {selectedCategory === category.slug && (
+          {categoryId === category.slug && (
             <div className="subcategory-list">
               {category.subcategories.map((sub) => (
-                <button
+                <Link
                   key={sub}
+                  to={`/category/${category.slug}/${sub}`}
                   className={
-                    selectedSubcategory === sub
+                    subcategoryId === sub
                       ? "subcategory-item active"
                       : "subcategory-item"
                   }
-                  onClick={() => onSelectSubcategory(sub)}
                 >
                   {sub}
-                </button>
+                </Link>
               ))}
             </div>
           )}

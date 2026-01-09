@@ -147,3 +147,58 @@
   border-radius: 4px;
   z-index: 2;
 }
+
+@media (max-width: 425px) {
+
+  .card {
+    height: auto;
+    padding: 0.8rem;
+  }
+
+  .card h3 {
+    font-size: 0.95rem;
+    min-height: unset;
+    height: auto;
+  }
+
+  .card-image {
+    width: 160px;
+    margin-bottom: 10px;
+  }
+
+  .price-container-wrapper {
+    height: auto;
+    margin: 6px 0;
+  }
+
+  .old-price {
+    font-size: 0.85rem;
+  }
+
+  .price-discount {
+    font-size: 1.05rem;
+  }
+
+  .card .price {
+    font-size: 0.95rem;
+  }
+
+  .card .card-btn-counter {
+    padding: 12px 18px;
+    font-size: 0.95rem;
+  }
+
+  .card .detail-btn {
+    font-size: 0.9rem;
+    padding: 0.45rem;
+  }
+
+  .added-quantity {
+    font-size: 0.8rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+}

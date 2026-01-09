@@ -1,56 +1,61 @@
-import Card from "../../components/common/card";
-import CategoryList from "../../components/common/categorieslist";
-import Searcher from "../../components/common/searcher";
-import useProducts from "../../hooks/useProducts";
-import { useFilter } from "../../hooks/search";
+import { useParams } from "react-router";
 import { useState } from "react";
+import useProducts from "../../hooks/useProducts";
+import CategoryList from "../../components/common/categorieslist";
+import Card from "../../components/common/card";
+import Searcher from "../../components/common/searcher";
 import "./index.css";
 
 const Shop = () => {
-
+  const { categoryId, subcategoryId } = useParams();
   const { items, loading } = useProducts();
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const [selectedSubcategory, setSelectedSubcategory] = useState(null);
 
-  const { query, setQuery, filteredData } = useFilter(items || []);
+  const [searchInput, setSearchInput] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   if (loading) return <p>Cargando productos...</p>;
 
-  const filteredProducts = filteredData.filter((product) => {
-    
-    const categoryMatch = selectedCategory
-      ? product.category === selectedCategory
-      : true;
+  const filteredProducts = items.filter((product) => {
+    if (categoryId && product.category !== categoryId) return false;
+    if (subcategoryId && product.subcategory !== subcategoryId) return false;
 
-    const subcategoryMatch = selectedSubcategory
-      ? product.subcategory === selectedSubcategory
-      : true;
+    if (searchTerm) {
+      const term = searchTerm.toLowerCase();
+      return (
+        product.title.toLowerCase().includes(term) ||
+        product.category.toLowerCase().includes(term) ||
+        product.subcategory?.toLowerCase().includes(term)
+      );
+    }
 
-    return categoryMatch && subcategoryMatch;
+    return true;
   });
 
   return (
     <div className="div-shop">
       <h2 className="shop-title">Tienda</h2>
 
-      <Searcher filter={query} setFilter={setQuery} />
+      <Searcher
+        value={searchInput}
+        onChange={setSearchInput}
+        onSearch={() => setSearchTerm(searchInput)}
+      />
 
       <div className="shop-layout">
         <aside className="sidebar">
           <h3>Categorías</h3>
-          <CategoryList
-            selectedCategory={selectedCategory}
-            selectedSubcategory={selectedSubcategory}
-            onSelectCategory={setSelectedCategory}
-            onSelectSubcategory={setSelectedSubcategory}
-          />
+          <CategoryList />
         </aside>
 
         <section className="shop">
           <div className="products-card">
-            {filteredProducts.map((item) => (
-              <Card key={item.id} product={item} />
-            ))}
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map((item) => (
+                <Card key={item.id} product={item} />
+              ))
+            ) : (
+              <p>No se encontraron productos</p>
+            )}
           </div>
         </section>
       </div>

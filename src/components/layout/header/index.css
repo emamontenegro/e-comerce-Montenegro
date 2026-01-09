@@ -11,7 +11,8 @@
   top: 3vh;
   width: 90%;
   z-index: 9999;
-
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .logo .logoimg {
@@ -55,4 +56,71 @@ a:hover {
     0 0 30px #0ff,
     0 0 40px #0ff,
     0 0 50px #0ff;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 425px) {
+
+  .header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    top: 0;
+    left: 0;
+    transform: none;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .nav-wrapper {
+    order: 1;
+  }
+
+  .logo {
+    order: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cart-icon {
+    order: 3;
+    justify-self: end;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    color: white;
+    font-size: 1.4rem;
+    padding: 0.4rem 0.6rem;
+    margin-right: 0;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #313131;
+    display: none;
+  }
+
+  .nav.open {
+    display: block;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav li {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #444;
+  }
 }

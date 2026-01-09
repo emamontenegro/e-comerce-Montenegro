@@ -1,22 +1,19 @@
 import { useParams } from "react-router";
-import useProducts from "../../hooks/useProducts";
-import { useAuth } from "../../context/auth";
-import ItemDetail from "../../components/common/itemdetail/itemDetail";
+import useProducts from "../../../hooks/useProducts";
+import { useAuth } from "../../../context/auth";
+import ItemDetail from "./ItemDetail";
 
-
-const ProductDetail = () => {
+const ItemDetailContainer = () => {
   const { id } = useParams();
-
   const { items, loading } = useProducts();
   const { cart, addToCart, removeFromCart } = useAuth();
 
-  if (loading) return <p className="loading">Cargando...</p>;
-
   const product = items.find(p => String(p.id) === String(id));
-  if (!product) return <p className="not-found">Producto no encontrado</p>;
-
-  const itemInCart = cart.find(p => p.id === product.id);
+  const itemInCart = cart.find(p => p.id === product?.id);
   const quantity = itemInCart?.quantity || 0;
+
+  if (loading) return <p>Cargando...</p>;
+  if (!product) return <p>Producto no encontrado</p>;
 
   return (
     <ItemDetail
@@ -28,4 +25,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default ItemDetailContainer;
