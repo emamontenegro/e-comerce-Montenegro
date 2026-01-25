@@ -5,6 +5,8 @@ A technology ecommerce web application focused on PC gaming products, built with
 ## 🚀 About the project
 This ecommerce application simulates an online PC gaming store, allowing users to browse products, manage a shopping cart, and persist purchases using Firebase.
 
+> Firebase is configured for demo purposes.
+
 ## 🛠️ Built with
 - React
 - Vite
