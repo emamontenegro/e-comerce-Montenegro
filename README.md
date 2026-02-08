@@ -1,29 +1,45 @@
 # 🖥️ PC Gaming Ecommerce
 
-A technology ecommerce web application focused on PC gaming products, built with React and Vite.
+A frontend-focused ecommerce web application for PC gaming products, developed with **React** and **Vite**, using **Firebase** as backend services for data persistence.
 
-## 🚀 About the project
-This ecommerce application simulates an online PC gaming store, allowing users to browse products, manage a shopping cart, and persist purchases using Firebase.
+## 🚀 Project Overview
 
-> Firebase is configured for demo purposes.
+This project simulates a PC gaming online store where users can browse products, add items to a shopping cart, and complete purchases.  
+The application is designed to demonstrate state management, client-side routing, and integration with cloud-based backend services.
 
-## 🛠️ Built with
-- React
-- Vite
-- JavaScript
-- Firebase
-- React Router
-- Context API
+Firebase is configured in demo mode for product and order storage.
+
+## 🧠 Technical Details
+
+- Component-based architecture built with React
+- Global state management implemented via Context API
+- Client-side routing handled by React Router
+- Asynchronous data fetching from Firebase Firestore
+- Cart and order persistence using Firebase
+- Modular and scalable folder structure
+- Responsive UI optimized for desktop and mobile devices
+
+## 🛠️ Tech Stack
+
+- **React**
+- **Vite**
+- **JavaScript (ES6+)**
+- **Firebase (Firestore)**
+- **React Router**
+- **Context API**
 
 ## ✨ Features
-- Product listing fetched from Firebase
-- Shopping cart with global state using Context API
-- Persistent cart and orders stored in Firebase
-- Client-side routing with React Router
-- Responsive design for multiple devices
 
-## 🌐 Live demo
+- Dynamic product listing fetched from Firebase
+- Shopping cart with global state management
+- Order persistence in Firebase Firestore
+- Client-side navigation without page reloads
+- Responsive layout across multiple screen sizes
+
+## 🌐 Live Demo
+
 👉 https://e-comerce-montenegro.vercel.app/
 
-## 📌 Status
-Completed
+## 📌 Project Status
+
+✅ Completed
