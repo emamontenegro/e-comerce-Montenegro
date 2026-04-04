@@ -161,8 +161,10 @@ No database schemas are defined; Firestore is schema-less. Product documents con
 - Optimize performance with lazy loading and caching
 
 ## Author
-Emanuel Montenegro - Frontend Developer  
-[LinkedIn](https://linkedin.com/in/emanuelmontenegro) | [GitHub](https://github.com/emamontenegro) | emanuelmontenegro.dev@gmail.com
+- Author: [Emanuel Montenegro](https://emanuelmontenegro.dev)
+- Portfolio: [emanuelmontenegro.dev](https://emanuelmontenegro.dev)
+- LinkedIn: [linkedin.com/in/emanuelmontenegro](https://www.linkedin.com/in/emanuelmontenegro)
+- GitHub: [github.com/emanuelmontenegro](https://github.com/emanuelmontenegro)
 
 ## 🛠️ Tech Stack
 
